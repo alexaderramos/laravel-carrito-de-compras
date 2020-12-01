@@ -13,16 +13,16 @@ class Categoria extends Model
      */
     protected $table = 'categorias';
 
-   	protected $primaryKey ='id';
-   
+    protected $primaryKey = 'id';
+
     public $timestamps = false;
-   
-    protected $fillable = ['id','nombrec', 'descripcion'];
+
+    protected $fillable = ['id', 'nombrec', 'descripcion'];
 
     public function productos()
     {
-    	// hasMany(RelatedModel, foreignKeyOnRelatedModel = categoria_id, localKey = id)
-    	$this->hasMany(Producto::class);
+        // hasMany(RelatedModel, foreignKeyOnRelatedModel = categoria_id, localKey = id)
+        return $this->hasMany(Producto::class, 'categoria_id', 'id');
     }
 
 }

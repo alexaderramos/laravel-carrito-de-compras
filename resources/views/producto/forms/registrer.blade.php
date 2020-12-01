@@ -17,7 +17,7 @@
 <div class="form-group">
     {!! Form::label('Stock',null,['class'=>'col-lg-2 control-label']) !!}
     <div class="col-lg-10">
-    {!!Form::text('stock', null, ['class'=>'form-control',  'placeholder'=>'Solo valores enteros']) !!}
+    {!!Form::input('number','stock', null, ['class'=>'form-control',  'placeholder'=>'Solo valores enteros']) !!}
     </div>
 </div>
 <div class="form-group">

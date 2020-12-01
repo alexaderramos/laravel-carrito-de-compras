@@ -31,6 +31,8 @@ Route::group(['middleware' => ['admin','auth']],function (){
 	Route::resource('admin/producto','Producto\ProductoController');
 	Route::resource('admin/categoria','Categoria\CategoriaController');
 	Route::resource('admin/reportes','Reporte\ReporteController');
+
+	Route::get('admin/producto/eliminar/{id}','Producto\ProductoController@delete')->name('admin.producto.delete');
 	
 	
 });

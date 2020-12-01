@@ -2,6 +2,7 @@
 
 namespace Bakery\Http\Controllers\Producto;
 
+use Bakery\Http\Requests\ProductoCreateRequest;
 use Illuminate\Http\Request;
 use Bakery\Categoria;
 use Bakery\Producto;
@@ -59,12 +60,12 @@ class ProductoController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(ProductoCreateRequest $request)
     {
         Producto::create($request->all());
-        return redirect('/admin/producto');
+        return redirect()->route('admin.producto.index')->with('success','Producto registrado correctamente');
     }
 
     /**
@@ -106,7 +107,19 @@ class ProductoController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
+    public function destroy($id)
+    {
+        $producto = Producto::findOrFail($id);
+        $producto->delete();
+        return redirect()->route('admin.producto.index')->with('success','Producto eliminado correctamente');
+    }
+
+    public function delete($id)
+    {
+        $producto = Producto::findOrFail($id);
+        return view('producto.delete', compact('producto'));
+    }
     
 }
