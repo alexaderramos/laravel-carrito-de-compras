@@ -39,7 +39,7 @@
         <div class="portfolio-wrap">
             @foreach ($productos as $producto)
               <article class="{{ $producto->categoria_id }}"
-                     data-image="/store_productos/{{ $producto->foto }}">
+                     data-image="{{asset('store_productos/'.$producto->foto)}}">
                 <div class="image-background"></div>
                 <a href="{{ route('cart-add',$producto->id) }}" class="overlay">
                     <div class="background-color"></div>

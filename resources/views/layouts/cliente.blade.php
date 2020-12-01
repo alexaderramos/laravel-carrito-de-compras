@@ -64,9 +64,9 @@
                         </li>
                         <li>
                             <a href="{{ route('cart-show') }}">
-                                <div class="big">Mis Compras</div>
+                                <div class="big">Mi Carrito</div>
                                 <hr/>
-                                <div class="small">Reporte</div>
+                                <div class="small">Carrito</div>
                             </a>
                         </li>
                      

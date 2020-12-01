@@ -24,7 +24,7 @@
                    	<table class="table table-striped table-hover  table-bordered">
                    		<thead>
                    			<tr>
-                   				<th>Imagen</th>
+                   				<th style="width: 12%">Imagen</th>
                    				<th>Producto</th>
                    				<th>Precio</th>
                    				<th>Cantidad</th>
@@ -35,12 +35,13 @@
                    		<tbody>
                    			@foreach ($cart as $item)
                    			<tr>
-                   				<td><img src="/panaderia/public/store_productos/{{ $item->foto }}"></td>
+                   				<td><img src="{{asset('store_productos/'.$item->foto)}}"></td>
                    				<td>{{ $item->nombre }}</td>
                    				<td>{{ number_format($item->precio_es,2) }}</td>
                    				<td>
                    					<input 
-                   						class="form-inline" 
+                   						class="form-inline"
+										name="cant"
                    						type="number"  
                    						min="1"
                    						max="{{ $item->stock }}"
@@ -69,11 +70,12 @@
                    			@endforeach
                    		</tbody>
                    	</table><hr/>
-                   	<h3>
-                   		<span class="label label-success"></span>
-                   		Total: S/. {{ number_format($total,2) }}
-                   	</h3>
+
                    </div>
+					<h3>
+						<span class="label label-success"></span>
+						Total: S/. {{ number_format($total,2) }}
+					</h3>
                 </div>
             </div>
             @else

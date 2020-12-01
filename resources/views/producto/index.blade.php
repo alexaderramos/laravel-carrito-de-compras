@@ -56,7 +56,7 @@
                                     <tr>
                                         <td>{{ $producto->id }}</td>
                                         <td class="text-center">
-                                            <img src="/store_productos/{{ $producto->foto }}" style=";"
+                                            <img src="{{ asset('/store_productos/'.$producto->foto) }}" style=";"
                                                  class="img-responsive">
                                         </td>
                                         <td> {{ $producto->nombre }}</td>
@@ -114,7 +114,7 @@
                         display: $.fn.dataTable.Responsive.display.modal( {
                             header: function ( row ) {
                                 var data = row.data();
-                                return 'Detalles de '+data['name']+', '+data['dni'];
+                                return 'Detalles del producto';
                             }
                         } ),
                         renderer: $.fn.dataTable.Responsive.renderer.tableAll({

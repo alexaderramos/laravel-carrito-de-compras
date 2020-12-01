@@ -35,7 +35,7 @@ class AdminController extends Controller
      */
     public function clientes()
     {
-         $clientes=User::paginate(6);
+        $clientes=User::where('is_admin','=',0)->get();
         return view('admin.clientes',compact('clientes'));
     }
 

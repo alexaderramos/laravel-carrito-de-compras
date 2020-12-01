@@ -63,7 +63,7 @@
                         </li>
                         <li>
                             <a href="{{ url('carta') }}">
-                                <div class="big">Productos</div>
+                                <div class="big">Carta</div>
                                 <hr/>
                                 <div class="small">Variedad</div>
                             </a>

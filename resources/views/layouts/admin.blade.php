@@ -70,10 +70,9 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="{{ asset('assets/images/admin/avatar1_small.jpg') }}">
+                                <img alt="" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&size=30">
                             </span>
-                        <span class="username">{{ Auth::user()->name }}</span>
-                        <b class="caret"></b>
+                        <span class="username">Bienvenid@, {{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
@@ -113,20 +112,11 @@
 
                     </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_desktop"></i>
-                        <span>Clientes</span>
-                        <span class="menu-arrow arrow_carrot-right"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="{{ url('admin/cliente') }}">Todos los Clientes</a></li>
-                    </ul>
-                </li>
+
 
                 <li class="sub-menu">
                     <a href="javascript:;" class="">
-                        <i class="icon_table"></i>
+                        <i class="icon_tag"></i>
                         <span>Categorias</span>
                         <span class="menu-arrow arrow_carrot-right"></span>
                     </a>
@@ -135,11 +125,21 @@
                         <li><a class="" href="{{ url('admin/categoria') }}">Todas las Categorias</a></li>
                     </ul>
                 </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_profile"></i>
+                        <span>Clientes</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="{{ url('admin/cliente') }}">Todos los Clientes</a></li>
+                    </ul>
+                </li>
 
                 <li class="active">
                     <a class="" href="{{ url('logout') }}">
                         <i class="icon_key"></i>
-                        <span>Finalizar Sesion</span>
+                        <span><b>Finalizar Sesion</b></span>
                     </a>
                 </li
 
