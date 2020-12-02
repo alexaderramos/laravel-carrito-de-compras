@@ -45,6 +45,11 @@ class Producto extends Model
         return $this->belongsTo(Categoria::class, 'categoria_id', 'id');
     }
 
+    public function detallePedido()
+    {
+        return $this->hasMany(DetallePedido::class);
+    }
+
     //mutador --> modificar el nombre de la foto antes de ser guardada 
     public function setfotoAttribute($foto)
     {

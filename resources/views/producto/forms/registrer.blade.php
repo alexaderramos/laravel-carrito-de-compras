@@ -3,7 +3,7 @@
 <div class="form-group">
     {!! Form::label('Nombre',null,['class'=>'col-lg-2 control-label']) !!}
     <div class="col-lg-10">
-    {!!Form::text('nombre', null, ['class'=>'form-control',  'placeholder'=>'Nombre']) !!}
+    {!!Form::text('nombre', null, ['class'=>'form-control',  'placeholder'=>'Nombre','maxlength'=>15,'autocomplete'=>'off']) !!}
     </div>
 </div>
 

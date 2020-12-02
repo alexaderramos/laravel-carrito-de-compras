@@ -33,9 +33,21 @@ Route::group(['middleware' => ['admin','auth']],function (){
 	Route::resource('admin/reportes','Reporte\ReporteController');
 
 	Route::get('admin/producto/eliminar/{id}','Producto\ProductoController@delete')->name('admin.producto.delete');
-	
-	
+
+
+    Route::get('admin/pedidos','Pedido\PedidoController@index')->name('admin.pedidos.index');
+    Route::put('admin/pedidos/{id}','Pedido\PedidoController@update')->name('admin.pedidos.update');
+
+
+
+
+
+
 });
+
+Route::post('pedidos','Pedido\PedidoController@store')->name('pedidos.store');
+Route::get('pedidos','Pedido\PedidoController@index')->name('pedidos.index');
+
 
 //Routes carrito
 Route::bind('product',function ($id)
@@ -74,8 +86,7 @@ Route::get('order-detail',[
 ]);
 
 //Routes cliente
-Route::get('cliente','Cliente\ClienteController@index');
-
+Route::get('cliente','Cliente\ClienteController@index')->name('cliente.index');
 
 
 

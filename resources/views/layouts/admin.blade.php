@@ -38,6 +38,53 @@
         .modal-dialog{
             left: auto;
         }
+        .badge {
+            padding: 2px 9px 2px;
+            font-size: 12.025px;
+            font-weight: bold;
+            white-space: nowrap;
+            color: #ffffff;
+            background-color: #999999;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+            text-transform: uppercase;
+        }
+        .badge:hover {
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .badge-error {
+            background-color: #b94a48;
+        }
+        .badge-error:hover {
+            background-color: #953b39;
+        }
+        .badge-warning {
+            background-color: #f89406;
+        }
+        .badge-warning:hover {
+            background-color: #c67605;
+        }
+        .badge-success {
+            background-color: #468847;
+        }
+        .badge-success:hover {
+            background-color: #356635;
+        }
+        .badge-info {
+            background-color: #3a87ad;
+        }
+        .badge-info:hover {
+            background-color: #2d6987;
+        }
+        .badge-inverse {
+            background-color: #333333;
+        }
+        .badge-inverse:hover {
+            background-color: #1a1a1a;
+        }
     </style>
 
 
@@ -134,6 +181,12 @@
                     <ul class="sub">
                         <li><a class="" href="{{ url('admin/cliente') }}">Todos los Clientes</a></li>
                     </ul>
+                </li>
+                <li class="">
+                    <a class="" href="{{ route('admin.pedidos.index') }}">
+                        <i class="icon_cart"></i>
+                        <span>Pedidos</span>
+                    </a>
                 </li>
 
                 <li class="active">
